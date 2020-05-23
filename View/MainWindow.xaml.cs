@@ -28,5 +28,10 @@ namespace View
             InitializeComponent();
             this.DataContext = new ShopsViewModel();
         }
+        private void Buy_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("You've bought the good.\n" +
+                    "\nCome to the store on Monday-Friday from 9:00 to 21:00.");
+        }
     }
 }

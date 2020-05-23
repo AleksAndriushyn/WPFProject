@@ -173,6 +173,7 @@ namespace ViewModel
         private void ExecuteBookItemCommand(object parameter)
         {
             Shop.BookItem(bookGood);
+            OnPropertyChanged("bookGood");
         }
 
         private bool CanExecuteBookItemCommand(object parameter)

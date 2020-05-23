@@ -88,15 +88,20 @@ namespace Model
             return allGoods;
         }
 
-        public static string BookItem(string bookGood)
+        public static void BookItem(string bookGood)
         {
-            Booking booking = new Booking(DateTime.Now.AddDays(7), DateTime.Now);
-
-            string answer = $"You've booked the {bookGood} {booking.date}.\n" +
-                    $"Your booking will expire {booking.validity}." +
-                    $"\nCome to the store from Monday-Friday from 9:00 to 21:00.";
-
-            return answer;
+            //Booking booking = new Booking(DateTime.Now.AddDays(7), DateTime.Now);
+            //string answer = "";
+            //foreach (var g in Goods)
+            //{
+            //    if (bookGood == g.name)
+            //    {
+            //        answer = $"You've booked the {bookGood} {booking.date}.\n" +
+            //        $"Your booking will expire {booking.validity}." +
+            //        $"\nCome to the store from Monday-Friday from 9:00 to 21:00.";
+            //    }
+            //}
+            //return answer;
         }
     }
 }

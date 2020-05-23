@@ -21,7 +21,7 @@
         <TextBox Height="85" Margin="85,169,124.8,0" TextWrapping="Wrap" Text="{Binding ChosenShop, Mode=OneWay}" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="122,259,0,0" TextWrapping="Wrap" Text="{Binding bookGood, Mode=OneWayToSource}" VerticalAlignment="Top" Width="117" Grid.ColumnSpan="2"/>
         <Button Content="Book" Command="{Binding BookItemCommand}" HorizontalAlignment="Left" Margin="193,287,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.472,0.031" Grid.ColumnSpan="2"/>
-        <Button Content="Buy" Margin="85,287,52,0" VerticalAlignment="Top" RenderTransformOrigin="0.472,0.031"/>
+        <Button Content="Buy" Margin="85,287,52,0" VerticalAlignment="Top" RenderTransformOrigin="0.472,0.031" Click="Buy_Click"/>
         <TextBox Height="85" Margin="85,311,124.8,-49.6" TextWrapping="Wrap" Text="{Binding bookGood, Mode=OneWay}" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
