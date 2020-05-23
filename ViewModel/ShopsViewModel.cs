@@ -50,15 +50,15 @@ namespace ViewModel
             }
         }
 
-        //string _goodName;
-        //public string goodName
-        //{
-        //    get => _goodName;
-        //    set
-        //    {
-        //        _goodName = value;
-        //    }
-        //}
+        string _goodName;
+        public string goodName
+        {
+            get => _goodName;
+            set
+            {
+                _goodName = value;
+            }
+        }
 
         string _bookGood;
         public string bookGood
@@ -131,8 +131,14 @@ namespace ViewModel
         }
         private void ExecuteGetShopByNameCommand(object parameter)
         {
-            Network.GetShopByName(storeName);
-            OnPropertyChanged("storeName");
+            Network.GetShopByName(ChosenShop);
+            StringBuilder sb = new StringBuilder("");
+            foreach (var good in Shop.Goods)
+            {
+                sb.Append(good.name + ", " + "Price: " + good.price + "\n");
+            }
+            ChosenShop = sb.ToString();
+            OnPropertyChanged("ChosenShop");
         }
 
         private bool CanExecuteGetShopByNameCommand(object parameter)
@@ -140,34 +146,29 @@ namespace ViewModel
             return true;
         }
 
-        private void ExecuteGetGoodsCommand(object parameter)
-        {
-            Shop.AddGood(ChosenShop);
-            Shop.GetGoods(ChosenShop);
-            StringBuilder sb = new StringBuilder("");
-            foreach (var good in Shop.Goods)
-            {
-                sb.Append(good.name + "Price: " + good.price + "\n");
-            }
-            ChosenShop = sb.ToString();
-            OnPropertyChanged("ChosenShop");
-        }
+        //private void ExecuteGetGoodsCommand(object parameter)
+        //{
+        //    Shop.AddGood(ChosenShop);
+        //    Shop.GetGoods(ChosenShop);
+            
+        //    OnPropertyChanged("ChosenShop");
+        //}
 
-        private bool CanExecuteGetGoodsCommand(object parameter)
-        {
-            return true;
-        }
+        //private bool CanExecuteGetGoodsCommand(object parameter)
+        //{
+        //    return true;
+        //}
 
-        Command _GetGoodsCommand;
-        public ICommand GetGoodsCommand
-        {
-            get
-            {
-                if (_GetGoodsCommand == null)
-                    _GetGoodsCommand = new Command(ExecuteGetGoodsCommand, CanExecuteGetGoodsCommand);
-                return _GetGoodsCommand;
-            }
-        }
+        //Command _GetGoodsCommand;
+        //public ICommand GetGoodsCommand
+        //{
+        //    get
+        //    {
+        //        if (_GetGoodsCommand == null)
+        //            _GetGoodsCommand = new Command(ExecuteGetGoodsCommand, CanExecuteGetGoodsCommand);
+        //        return _GetGoodsCommand;
+        //    }
+        //}
 
         private void ExecuteBookItemCommand(object parameter)
         {

@@ -33,7 +33,7 @@ namespace Model
                 }
             }
 
-            else if (storeName == "Apteka")
+            if (storeName == "Apteka")
             {
                 foreach (Good g in AptekaGoods)
                 {
@@ -41,14 +41,13 @@ namespace Model
                 }
             }
 
-            else if (storeName == "Store")
+            if (storeName == "Store")
             {
                 foreach (Good g in StoreGoods)
                 {
                     Goods.Add(g);
                 }
-            }
-            else throw new Exception();
+            } 
         }
 
         public void AddGoods(List<Good> newList)
