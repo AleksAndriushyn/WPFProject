@@ -1,0 +1,24 @@
+﻿<Window x:Class="View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ViewModel;assembly=ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="341.22" Width="399.2">
+    <Window.DataContext>
+        <local:ShopsViewModel/>
+    </Window.DataContext>
+    <Grid Margin="0,0,-0.4,103.2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="212*"/>
+            <ColumnDefinition Width="181*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Load Shops" Command="{Binding AddShopsCommand}" HorizontalAlignment="Left" Margin="61,22,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox Text="{Binding storeName, Mode=OneWay}" HorizontalAlignment="Left" Height="61" Margin="10,46,0,0" VerticalAlignment="Top" Width="183"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="43,117,0,0" TextWrapping="Wrap" Text="{Binding ChosenShop, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Add Goods" Command="{Binding GetGoodsCommand}" HorizontalAlignment="Left" Margin="61,145,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox Height="85" Margin="9,169,20,-45.2" TextWrapping="Wrap" Text="{Binding ChosenShop, Mode=OneWay}" VerticalAlignment="Top"/>
+        <Button Content="Book" Command="{Binding GetGoodsCommand}" HorizontalAlignment="Left" Margin="61,259,0,-69.2" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.472,0.031"/>
+    </Grid>
+</Window>
